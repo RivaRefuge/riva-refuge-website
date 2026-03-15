@@ -181,28 +181,28 @@ const canonicalURL = new URL('/beta/', 'https://www.rivarefuge.org');
         </p>
         <ul class="vision-list" style="margin-top:1.5rem;">
           <li>
-            <div class="vision-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="vision-icon" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
             <div>
               <h4>Economic Opportunity</h4>
               <p>Microloans and small business support</p>
             </div>
           </li>
           <li>
-            <div class="vision-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="vision-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
             <div>
               <h4>Education</h4>
               <p>Scholarships for disadvantaged students</p>
             </div>
           </li>
           <li>
-            <div class="vision-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div class="vision-icon" aria-hidden="true"><i class="fas fa-medkit"></i></div>
             <div>
               <h4>Health</h4>
               <p>Disease prevention and treatment</p>
             </div>
           </li>
           <li>
-            <div class="vision-icon"><i class="fa-solid fa-children"></i></div>
+            <div class="vision-icon" aria-hidden="true"><i class="fas fa-child"></i></div>
             <div>
               <h4>Children</h4>
               <p>Supporting orphanages and youth programs</p>
@@ -276,6 +276,12 @@ const canonicalURL = new URL('/beta/', 'https://www.rivarefuge.org');
         <div class="cta-card-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
         <h3>Donate</h3>
         <p>Give securely via PayPal or mail a check.</p>
+        <a href="https://www.paypal.com/donate/?hosted_button_id=MLN72XRM42EB4"
+           target="_blank" rel="noopener"
+           class="btn-donate-card">
+          <i class="fa-solid fa-heart"></i> Donate Now
+        </a>
+        <p class="donate-secure-note"><i class="fa-solid fa-lock"></i> Secure via PayPal</p>
         <details class="address-disclosure">
           <summary>View mailing address</summary>
           <p class="address-text">Riva Refuge, Inc.<br />10 West Bluff Drive<br />Port Angeles, WA 98362</p>
@@ -289,21 +295,10 @@ const canonicalURL = new URL('/beta/', 'https://www.rivarefuge.org');
       <div class="cta-card">
         <div class="cta-card-icon"><i class="fa-solid fa-share-nodes"></i></div>
         <h3>Spread the Word</h3>
-        <p>Follow us on Facebook and share our mission with your network.</p>
+        <p>Follow us on <a href="https://www.facebook.com/Riva-Refuge-Inc-177593545669926" target="_blank" rel="noopener" class="card-link">Facebook</a> and share our mission with your network.</p>
       </div>
     </div>
 
-    <!-- Donate Button -->
-    <div class="donate-btn-wrap">
-      <a href="https://www.paypal.com/donate/?hosted_button_id=MLN72XRM42EB4"
-         target="_blank" rel="noopener"
-         class="btn-donate">
-        <i class="fa-solid fa-heart"></i> Donate Now
-      </a>
-      <p class="donate-secure-note">
-        <i class="fa-solid fa-lock"></i> Secure payment via PayPal
-      </p>
-    </div>
   </div>
 </section>
 
@@ -319,20 +314,21 @@ const canonicalURL = new URL('/beta/', 'https://www.rivarefuge.org');
     <div class="board-row">
       <div class="board-member">
         <div class="board-member-avatar"><i class="fa-solid fa-user"></i></div>
-        <h4>Lorna VanderZanden</h4>
         <p>President &amp; CEO</p>
       </div>
       <div class="board-member">
         <div class="board-member-avatar"><i class="fa-solid fa-user"></i></div>
-        <h4>Sue Goodwin</h4>
         <p>Vice-President</p>
       </div>
       <div class="board-member">
         <div class="board-member-avatar"><i class="fa-solid fa-user"></i></div>
-        <h4>Marla Taylor</h4>
         <p>Secretary / Treasurer</p>
       </div>
     </div>
+    <details class="board-disclosure">
+      <summary>View board members</summary>
+      <p class="board-names">Lorna VanderZanden, Sue Goodwin, Marla Taylor</p>
+    </details>
   </div>
 </section>
 

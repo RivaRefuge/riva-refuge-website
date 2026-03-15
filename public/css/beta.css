@@ -582,35 +582,42 @@ a:hover {
   line-height: 1.6;
 }
 
-/* Custom donate button */
-.donate-btn-wrap {
-  margin-top: 2rem;
-}
-.btn-donate {
+/* In-card donate button */
+.btn-donate-card {
   display: inline-block;
   background: linear-gradient(135deg, #ff6b6b, var(--rr-red));
   color: #fff !important;
-  padding: 1rem 3rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 50px;
-  font-size: 1.15rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: none;
+  margin-top: 0.75rem;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 20px rgba(192, 57, 43, 0.4);
+  box-shadow: 0 3px 12px rgba(192, 57, 43, 0.3);
 }
-.btn-donate:hover {
+.btn-donate-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(192, 57, 43, 0.5);
+  box-shadow: 0 6px 20px rgba(192, 57, 43, 0.45);
   color: #fff !important;
 }
-.btn-donate i {
-  margin-right: 0.4rem;
+.btn-donate-card i {
+  margin-right: 0.3rem;
+}
+/* Card links (e.g. Facebook) */
+.card-link {
+  color: #ff6b6b !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.card-link:hover {
+  color: #fff !important;
 }
 .donate-secure-note {
-  margin-top: 1rem;
-  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
   opacity: 0.5;
 }
 .donate-secure-note i {
@@ -655,6 +662,31 @@ a:hover {
   font-size: 0.85rem;
   color: #888;
   margin: 0;
+}
+.board-disclosure {
+  margin-top: 1.5rem;
+}
+.board-disclosure summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--rr-red);
+  font-weight: 500;
+  list-style: none;
+}
+.board-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+.board-disclosure summary::after {
+  content: ' \25BE';
+  font-size: 0.7rem;
+}
+.board-disclosure[open] summary::after {
+  content: ' \25B4';
+}
+.board-names {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
 }
 
 /* ---------- FOOTER ---------- */
