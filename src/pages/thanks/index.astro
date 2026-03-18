@@ -1,9 +1,50 @@
 ---
 import { Image } from 'astro:assets';
-import Layout from '../../layouts/Layout.astro';
-import hero from '../../assets/images/fp-hero.jpg';
+import logoImg from '../../assets/images/rrlogo-only.png';
+import heroImg from '../../assets/images/fp-hero.jpg';
+
+const title = "Thank You | Riva Refuge";
 ---
-<Layout title="Thank You" menuEntry="home">
-  <Image src={hero} alt="Linked arms symbolizing unity and support among diverse individuals." width={670} loading="eager" />
-  <p>Riva Refuge thanks you for your donation.</p>
-</Layout>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/rr-custom.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl0HPNiecjHEM7FnGQAU1e3tOU/WnJiB8JPA5aafDEhTuMFBm5JZef+IehljEmW5SDLRI+iH+LFfA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<nav class="beta-nav">
+  <div class="beta-nav-inner">
+    <a href="/" class="beta-nav-brand">
+      <Image src={logoImg} alt="" width={38} loading="eager" />
+      <span><span class="brand-riva">Riva</span> <span class="brand-refuge">Refuge</span></span>
+    </a>
+  </div>
+</nav>
+
+<section class="beta-hero" style="min-height:60vh;">
+  <div class="beta-hero-bg">
+    <Image src={heroImg} alt="Community in Kenya" width={1400} loading="eager" fetchpriority="high" />
+  </div>
+  <div class="beta-hero-content">
+    <h1>Thank You</h1>
+    <p class="beta-hero-tagline">
+      Riva Refuge thanks you for your generous donation.
+      Every dollar goes directly to the people who need it.
+    </p>
+    <a href="/" class="btn-hero">Back to Home</a>
+  </div>
+</section>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f2b00cbfb5a94b04b09d69db7c5524a5"}'></script>
+</body>
+</html>
