@@ -17,51 +17,24 @@ npm run preview             # Preview the dist/ build locally
 
 ## Architecture
 
+The site is a self-contained one-pager. There is no shared layout component, no nav/footer component, and no CSS framework. Each page is a standalone `.astro` file that includes its own `<html>`, `<head>`, and `<body>`.
+
 ### File Structure
 
 ```
 src/
-  layouts/
-    Layout.astro            # Main wrapper: head, nav, content column, footer
-  components/
-    Nav.astro               # Responsive Bootstrap navbar (active state via menuEntry prop)
-    Footer.astro            # Footer: email, Facebook, tagline
-    DonateButton.astro      # PayPal Donate SDK button
   assets/
     images/                 # All site images — processed to WebP at build time
-  pages/                    # One .astro file per route
-    index.astro
-    404.astro
-    campaigns/
-      index.astro
-      jadelle-family-planning-program/index.astro
-      scholarship-program/index.astro
-      matisi-food-medicine/index.astro
-    our-history/index.astro
-    our-vision/index.astro
-    board-of-directors/index.astro
-    contact-us/index.astro
-    get-involved/index.astro
-    thanks/index.astro
+  pages/
+    index.astro             # One-pager homepage (self-contained)
+    404.astro               # Standalone 404 page
+    thanks/index.astro      # PayPal donate return page
 public/
   css/rr-custom.css         # Only local stylesheet
   CNAME                     # Custom domain: www.rivarefuge.org
   robots.txt
   favicon.ico / favicon.svg
-_source-images/             # Working source files for images (not served)
 ```
-
-### Layout Props
-
-Every page passes props to `Layout.astro`:
-
-```astro
-<Layout title="Page Title" menuEntry="history" description="SEO description">
-```
-
-- `title` — page title; home page uses `"Riva Refuge"`, others use `"Page Title | Riva Refuge"`
-- `menuEntry` — highlights the active nav item: `home`, `campaigns`, `ourvision`, `getinvolved`, `history`, `board`, `contact`
-- `description` — meta description for SEO (falls back to site-wide default if omitted)
 
 ### Images
 
@@ -70,27 +43,21 @@ Images live in `src/assets/images/` and are imported at the top of each page:
 ```astro
 ---
 import { Image } from 'astro:assets';
-import hero from '../../assets/images/fp-hero.jpg';
+import hero from '../assets/images/fp-hero.jpg';
 ---
 <Image src={hero} alt="Description" />
 ```
 
 - Astro converts images to WebP and infers dimensions automatically
-- Hero/first images: add `width={670} loading="eager" fetchpriority="high"`
+- Hero/first images: add `width={1400} loading="eager" fetchpriority="high"`
 - All other images: no extra attributes needed (lazy loading is the default)
-
-### Adding a New Page
-
-1. Create `src/pages/<slug>/index.astro`
-2. Import `Layout` and any images
-3. Pass `title`, `menuEntry`, and `description` props to `Layout`
-4. Add the route to `Nav.astro` if it should appear in navigation
 
 ### Styling
 
-- Bootstrap 5.3.2 via CDN (in `Layout.astro`)
-- Font Awesome 6.4.0 via cdnjs CDN (in `Layout.astro`)
-- Custom styles in `public/css/rr-custom.css`
+- Custom styles only — no CSS framework
+- Stylesheet: `public/css/rr-custom.css`
+- Font Awesome 6.4.0 via cdnjs CDN (linked in each page's `<head>`)
+- Cloudflare Web Analytics beacon included in each page's `<body>`
 
 ### Deployment
 
